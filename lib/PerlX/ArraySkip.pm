@@ -1,8 +1,8 @@
 package PerlX::ArraySkip;
 
 use 5.006;
-use strict;
-use warnings;
+#use strict;
+#use warnings;
 
 BEGIN {
 	$PerlX::ArraySkip::AUTHORITY = 'cpan:TOBYINK';
@@ -15,7 +15,7 @@ sub import
 	my $caller = caller;
 	@_ = qw(arrayskip) unless @_;
 	
-	no strict 'refs';
+	#no strict 'refs';
 	foreach my $func (@_)
 	{
 		*{"$caller\::$func"} = \&arrayskip;
