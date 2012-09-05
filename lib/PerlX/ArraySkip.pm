@@ -44,7 +44,7 @@ PerlX::ArraySkip - sub { shift; @_ }
 		'e',
 	);
 	
-	say join '' @list;   # says 'ace'
+	print join '', @list;   # prints 'ace'
 
 =head1 DESCRIPTION
 
