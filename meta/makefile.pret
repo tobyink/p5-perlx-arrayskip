@@ -1,0 +1,8 @@
+# This file provides instructions for packaging.
+
+`PerlX-ArraySkip`
+	perl_version_from m`PerlX::ArraySkip`;
+	version_from      m`PerlX::ArraySkip`;
+	readme_from       m`PerlX::ArraySkip`;
+	test_requires     p`Test::More 0.61`  .
+
