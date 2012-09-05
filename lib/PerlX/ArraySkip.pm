@@ -1,10 +1,8 @@
 package PerlX::ArraySkip;
 
-use 5.010;
-use constant { false => 0, true => 1 };
+use 5.006;
 use strict;
 use warnings;
-use utf8;
 
 BEGIN {
 	$PerlX::ArraySkip::AUTHORITY = 'cpan:TOBYINK';
