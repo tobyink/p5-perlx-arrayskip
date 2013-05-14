@@ -148,6 +148,15 @@ If you install L<PerlX::ArraySkip::XS>, a faster XS-based implementation will
 be used instead of the pure Perl function. My basic benchmarking experiments
 seem to show this to be around 55% faster.
 
+Calling C<PerlX::ArraySkip::IMPLEMENTATION> will return "PP" or "XS" to
+reveal the implementation currently in use.
+
+=begin trustme
+
+=item C<IMPLEMENTATION>
+
+=end trustme
+
 =head2 Environment
 
 The environment variable C<PERLX_ARRAYSKIP_IMPLEMENTATION> may be set to
