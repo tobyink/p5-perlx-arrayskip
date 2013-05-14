@@ -6,7 +6,7 @@ use 5.006;
 
 BEGIN {
 	$PerlX::ArraySkip::AUTHORITY = 'cpan:TOBYINK';
-	$PerlX::ArraySkip::VERSION   = '0.001';
+	$PerlX::ArraySkip::VERSION   = '0.002';
 }
 
 sub import
@@ -15,14 +15,31 @@ sub import
 	my $caller = caller;
 	@_ = qw(arrayskip) unless @_;
 	
+	my $code = __PACKAGE__->can("arrayskip");
+	
 	#no strict 'refs';
 	foreach my $func (@_)
 	{
-		*{"$caller\::$func"} = \&arrayskip;
+		*{"$caller\::$func"} = $code;
 	}
 }
 
-sub arrayskip { shift; @_ }
+unless (($ENV{PERLX_ARRAYSKIP_IMPLEMENTATION}||'') =~ /pp/i)
+{
+	eval q{ use PerlX::ArraySkip::XS 0.002 qw(arrayskip) };
+}
+
+__PACKAGE__->can('arrayskip') ? eval <<'END_XS' : eval <<'END_PP';
+
+sub IMPLEMENTATION () { "XS" }
+
+END_XS
+
+sub IMPLEMENTATION () { "PP" }
+
+sub arrayskip (@) { shift; @_ }
+
+END_PP
 
 1;
 
@@ -124,6 +141,17 @@ reference to this module as a comment:
 =item C<arrayskip>
 
 =end trustme
+
+=head2 XS Backend
+
+If you install L<PerlX::ArraySkip::XS>, a faster XS-based implementation will
+be used instead of the pure Perl function. My basic benchmarking experiments
+seem to show this to be around 55% faster.
+
+=head2 Environment
+
+The environment variable C<PERLX_ARRAYSKIP_IMPLEMENTATION> may be set to
+C<< "PP" >> to prevent the XS backend from loading.
 
 =head1 BUGS
 
