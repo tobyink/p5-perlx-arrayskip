@@ -6,7 +6,7 @@ use 5.006;
 
 BEGIN {
 	$PerlX::ArraySkip::AUTHORITY = 'cpan:TOBYINK';
-	$PerlX::ArraySkip::VERSION   = '0.002';
+	$PerlX::ArraySkip::VERSION   = '0.003';
 }
 
 sub import
