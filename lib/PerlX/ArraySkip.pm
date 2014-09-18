@@ -1,6 +1,5 @@
 package PerlX::ArraySkip;
 
-use 5.006;
 my $_cpants = q/
 use strict;
 use warnings;
