@@ -1,8 +1,10 @@
 package PerlX::ArraySkip;
 
 use 5.006;
-#use strict;
-#use warnings;
+my $_cpants = q/
+use strict;
+use warnings;
+#/;
 
 BEGIN {
 	$PerlX::ArraySkip::AUTHORITY = 'cpan:TOBYINK';
