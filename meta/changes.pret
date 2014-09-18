@@ -10,10 +10,16 @@
 		item "Use XS backend if available."^^Change;
 	].
 
-
 `PerlX-ArraySkip 0.003 cpan:TOBYINK`
 	issued    2014-09-10;
 	changeset [
 		item "Switch to Dist::Inkt."^^Packaging;
+	].
+
+`PerlX-ArraySkip 0.004 cpan:TOBYINK`
+	issued    2014-09-18;
+	changeset [
+		item "Add LICENSE file."^^Packaging;
+		item "Drop dependency on Perl 5.006; ought to work with Perl 5.002."^^Packaging;
 	].
 

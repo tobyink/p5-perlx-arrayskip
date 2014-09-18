@@ -7,7 +7,7 @@ use warnings;
 
 BEGIN {
 	$PerlX::ArraySkip::AUTHORITY = 'cpan:TOBYINK';
-	$PerlX::ArraySkip::VERSION   = '0.003';
+	$PerlX::ArraySkip::VERSION   = '0.004';
 }
 
 sub import
