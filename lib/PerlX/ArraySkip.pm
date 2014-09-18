@@ -176,7 +176,7 @@ If you liked this, you might also like L<PerlX::Maybe>.
 
 Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
-=head1 COPYRIGHT AND LICENCE
+=head1 LICENCE
 
 To the extent possible under law, Toby Inkster has waived all copyright and
 related or neighbouring rights to PerlX::ArraySkip. This work is published
